@@ -1,10 +1,12 @@
+local ai = require("config.ai")
+
 return {
   "coder/claudecode.nvim",
-  -- Only on machines where the Claude Code CLI is installed (e.g. work)
-  enabled = vim.fn.executable("claude") == 1,
+  -- Only one AI tool is enabled; see lua/config/ai.lua
+  enabled = ai.enabled("claude"),
   dependencies = { "folke/snacks.nvim" },
   keys = {
-    { "<leader>ac", "<cmd>ClaudeCode<cr>", mode = "n", desc = "Toggle Claude (float)" },
+    { "<leader>ac", "<cmd>ClaudeCode<cr>", mode = "n", desc = "Toggle Claude" },
   },
   opts = {
     terminal = {
