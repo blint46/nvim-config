@@ -14,6 +14,9 @@ return {
               Snacks.notify.warn("Missing projects directory. Create ~/Work and restart Neovim", { title = "Projects" })
             end
           end,
+          formatters = {
+            file = { filename_only = true },
+          },
         },
         explorer = {
           layout = {
